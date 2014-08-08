@@ -104,7 +104,7 @@ nowPlayingForUser = (user, msg) ->
     nowPlayingForLastfmUser user.lastfm.username,
       success: (track) ->
         if track
-          msg.send "#{user.name} ist listening to #{track.title} by #{track.artist}"
+          msg.send "#{user.name} is listening to #{track.title} by #{track.artist}"
         else
           msg.send "#{user.name} is not scrobbling anything!"
       error: (error) ->

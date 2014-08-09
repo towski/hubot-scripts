@@ -105,7 +105,7 @@ nowPlayingForUser = (user, msg) ->
     nowPlayingForLastfmUser user.lastfm.username,
       success: (track) ->
         if track
-          msg.send colors.green(user.name) + " is listening to " + colors.blue.bold(track.title) + " by " + colors.purple.bold(track.artist)
+          msg.send colors.red(user.name) + " is listening to " + colors.blue.bold(track.title) + " by " + colors.purple.bold(track.artist)
         else
           msg.send "#{user.name} is not scrobbling anything!"
       error: (error) ->

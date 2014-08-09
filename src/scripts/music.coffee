@@ -12,6 +12,7 @@
 
 cheerio = require 'cheerio'
 LastFm = require('lastfm').LastFmNode
+colors = require('irc-colors')
 
 module.exports = (robot) ->
 
@@ -104,7 +105,7 @@ nowPlayingForUser = (user, msg) ->
     nowPlayingForLastfmUser user.lastfm.username,
       success: (track) ->
         if track
-          msg.send "3#{user.name} is listening to #{track.title} by #{track.artist}"
+          msg.send colors.rainbow("#{user.name} is listening to #{track.title} by #{track.artist}")
         else
           msg.send "#{user.name} is not scrobbling anything!"
       error: (error) ->

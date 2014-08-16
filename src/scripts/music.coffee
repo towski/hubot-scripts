@@ -25,7 +25,7 @@ module.exports = (robot) ->
 
     msg.send "Okay, you're #{username} on Last.fm!"
 
-  robot.respond /(?:what's (.*)|what am I) listening to|np/i, (msg) ->
+  robot.respond /(?:what's (.*)|what am I|what is (.*)) listening to|np/i, (msg) ->
     name = msg.match[1] || msg.message.user.name
 
     if name is 'everyone'
